@@ -46,3 +46,8 @@ void Abilities::Display()
 {
 	cout << mName << ": (" << mDescription << ") : " << mDamages << " dmg, " << mPP << "/" << mPPMax;
 }
+
+string Abilities::GetName()
+{
+	return mName;
+}

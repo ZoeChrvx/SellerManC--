@@ -6,8 +6,7 @@ class Abilities
 private:
 	std::string mName;
 	std::string mDescription;
-	int mDamages;
-	int mPP, mPPMax;
+	int mDamages, mPP, mPPMax;
 
 public:
 	//Constructeur / Destructeur
@@ -16,7 +15,8 @@ public:
 	Abilities(std::string name, std::string description, int damages, int ppMax);
 	~Abilities();
 	
-	//Accesseurs (Pour avori acces au valeurs de cette classe
+	//Accesseurs (Pour avoir acces au valeurs de cette classe)
+	std::string GetName();
 	int GetDamages();
 	int GetPP();
 	int GetPPMax();

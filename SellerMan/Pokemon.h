@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Abilities.h"
+#include <random>
+#include <string>
 
 #pragma once
 class Pokemon
@@ -17,10 +19,11 @@ public:
 	Pokemon(std::string name, std::string descriptiond, int hp);
 	~Pokemon();
 
-	void GoAttack(Pokemon& target, int damages); //Je pointe un pokémon précis avec &
+	void GoAttack(Pokemon& target, int ability); //Je pointe un pokémon précis avec &
 	void TakeDamage(int enemyAttack);
 	//void GoInAndOutPokeBall();
 	void Heal(int potion);
 	void Display();
+	void Learn(Abilities ability, int place);
 };
 
