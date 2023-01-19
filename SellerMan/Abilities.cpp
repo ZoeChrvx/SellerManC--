@@ -47,6 +47,11 @@ void Abilities::Display()
 	cout << mName << ": (" << mDescription << ") : " << mDamages << " dmg, " << mPP << "/" << mPPMax;
 }
 
+void Abilities::ShortDisplay()
+{
+	cout << mName <<", " << mDamages << " dmg, " << mPP << "/" << mPPMax;
+}
+
 string Abilities::GetName()
 {
 	return mName;

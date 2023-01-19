@@ -13,9 +13,8 @@ Pokemon::~Pokemon(){}
 
 void Pokemon::GoAttack(Pokemon& target, int ability)
 {
-	if(ability < 0 || ability > 3 || mAbilities[ability].GetName() == "Default" || mAbilities[ability].GetPP() <= 0)
+	if(!IsAttackValid(ability))
 	{
-		cerr << mName << " n'a pas pu attaquer avec l'attaque #" << ability << endl;
 		return;
 	}
 	float coefficient = 1+ ((rand() % 4) - 2) / 10.0;
@@ -24,6 +23,17 @@ void Pokemon::GoAttack(Pokemon& target, int ability)
 	cout << mName << " attaque " << target.mName << " avec " << mAbilities[ability].GetName() << " et lui inflige " << damages << "." << endl;
 	target.TakeDamage(damages);
 }
+
+bool Pokemon::IsAttackValid(int ability)
+{
+	if (ability < 0 || ability > 3 || mAbilities[ability].GetName() == "Default" || mAbilities[ability].GetPP() <= 0)
+	{
+		cerr << mName << " n'a pas pu attaquer avec l'attaque #" << ability << endl;
+		return false;
+	}
+	return true;
+}
+
 void Pokemon::TakeDamage(int enemyAttack) 
 {
 	mLifePoint -= enemyAttack;
@@ -61,4 +71,15 @@ void Pokemon::Learn(Abilities ability, int place)
 	mAbilities[place] = ability;
 	
 	cout << mName << " a appris la capacité " << ability.GetName() << "." << endl;
+}
+bool Pokemon::IsAlive()
+{
+	if (mLifePoint <= 0) 
+	{
+		return false;
+	}
+	else 
+	{
+		return true;
+	}
 }

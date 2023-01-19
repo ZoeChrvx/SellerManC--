@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SellerMan.cpp">
+    <ClCompile Include="MainGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Pokemon.cpp">

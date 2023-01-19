@@ -24,6 +24,7 @@
     <ProjectGuid>{370cea4c-ffd4-49a6-8a72-09708d1fbfd9}</ProjectGuid>
     <RootNamespace>SellerMan</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MainGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -129,7 +130,7 @@
   <ItemGroup>
     <ClCompile Include="Abilities.cpp" />
     <ClCompile Include="Pokemon.cpp" />
-    <ClCompile Include="SellerMan.cpp" />
+    <ClCompile Include="MainGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abilities.h" />

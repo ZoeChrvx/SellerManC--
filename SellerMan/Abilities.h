@@ -15,13 +15,15 @@ public:
 	Abilities(std::string name, std::string description, int damages, int ppMax);
 	~Abilities();
 	
-	//Accesseurs (Pour avoir acces au valeurs de cette classe)
+	//Accesseurs (Pour avoir acces aux valeurs de cette classe)
 	std::string GetName();
 	int GetDamages();
 	int GetPP();
 	int GetPPMax();
 
+
 	//Other
+	void ShortDisplay();
 	void Display();
 };
 
