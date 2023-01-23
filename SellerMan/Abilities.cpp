@@ -44,12 +44,12 @@ int Abilities::GetPPMax()
 
 void Abilities::Display() 
 {
-	cout << mName << ": (" << mDescription << ") : " << mDamages << " dmg, " << mPP << "/" << mPPMax;
+	cout << mName << ": (" << mDescription << ") : " << mDamages << " dmg, " << mPP << "/" << mPPMax<<endl;
 }
 
 void Abilities::ShortDisplay()
 {
-	cout << mName <<", " << mDamages << " dmg, " << mPP << "/" << mPPMax;
+	cout << mName <<", " << mDamages << " dmg, " << mPP << "/" << mPPMax<<endl;
 }
 
 string Abilities::GetName()

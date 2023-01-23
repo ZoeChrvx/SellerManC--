@@ -28,7 +28,7 @@ bool Pokemon::IsAttackValid(int ability)
 {
 	if (ability < 0 || ability > 3 || mAbilities[ability].GetName() == "Default" || mAbilities[ability].GetPP() <= 0)
 	{
-		cerr << mName << " n'a pas pu attaquer avec l'attaque #" << ability << endl;
+		cerr << mName << " n'a pas pu attaquer avec l'attaque #" << ability<< endl;
 		return false;
 	}
 	return true;
@@ -81,5 +81,21 @@ bool Pokemon::IsAlive()
 	else 
 	{
 		return true;
+	}
+}
+
+void Pokemon::ShowAbilities()
+{
+	int index = 0;
+	for(Abilities ability : mAbilities)//tant qu'il y a une abilité dans la case, continue)
+	{
+		if (ability.GetName() == "Default") {
+			cout << index<<" - Non assigné\n";
+			index++;
+			continue;
+		}
+		cout << index << " - ";
+		ability.ShortDisplay();
+		index++;
 	}
 }

@@ -27,6 +27,6 @@ public:
 	void Display();
 	void Learn(Abilities ability, int place);
 	bool IsAlive();
-
+	void ShowAbilities();
 };
 

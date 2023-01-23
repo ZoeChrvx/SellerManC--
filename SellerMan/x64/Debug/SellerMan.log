@@ -1,5 +1,5 @@
-﻿C:\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SellerMan.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SellerMan.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Pokemon.cpp
-C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Pokemon.cpp(20,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Pokemon.cpp(21,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  SellerMan.vcxproj -> C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\MainGame.exe
+C:\Users\zoe.chervaux\Documents\GitHub\SellerManC--\SellerMan\Pokemon.cpp(20,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\zoe.chervaux\Documents\GitHub\SellerManC--\SellerMan\Pokemon.cpp(21,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  SellerMan.vcxproj -> C:\Users\zoe.chervaux\Documents\GitHub\SellerManC--\x64\Debug\MainGame.exe
