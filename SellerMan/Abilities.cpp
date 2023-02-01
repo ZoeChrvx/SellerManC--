@@ -11,21 +11,23 @@ Abilities::Abilities()
 	mPPMax = 10;
 	mPP = mPPMax;
 }
-Abilities::Abilities(string name, int damages, int ppMax)
+Abilities::Abilities(string name, Elements type, int damages, int ppMax)
 {
 	mName = name;
 	mDescription = "La Flemme";
 	mDamages = damages;
 	mPPMax = ppMax;
 	mPP = mPPMax;
+	mType = type;
 }
-Abilities::Abilities(string name, string description, int damages, int ppMax) 
+Abilities::Abilities(string name, std::string description, Elements type, int damages, int ppMax)
 {
 	mName = name;
 	mDescription = description;
 	mDamages = damages;
 	mPPMax = ppMax;
 	mPP = mPPMax;
+	mType = type;
 }
 Abilities::~Abilities(){}
 
@@ -44,15 +46,30 @@ int Abilities::GetPPMax()
 
 void Abilities::Display() 
 {
-	cout << mName << ": (" << mDescription << ") : " << mDamages << " dmg, " << mPP << "/" << mPPMax<<endl;
+	cout << mName << ": (" << mDescription << ") : " << mDamages << " dmg, " << ElementToString(mType) << ", " << mPP << "/" << mPPMax << endl;
 }
 
 void Abilities::ShortDisplay()
 {
-	cout << mName <<", " << mDamages << " dmg, " << mPP << "/" << mPPMax<<endl;
+	cout << mName <<" \t| " << mDamages << " dmg \t| " << ElementToString(mType) << mPP << "/" << mPPMax<<endl;
 }
 
 string Abilities::GetName()
 {
 	return mName;
+}
+
+void Abilities::Use()
+{
+	mPP--;
+}
+
+void Abilities::Reset()
+{
+	mPP = mPPMax;
+}
+
+Elements Abilities::GetAbilityType()
+{
+	return mType;
 }

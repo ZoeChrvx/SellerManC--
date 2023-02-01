@@ -3,17 +3,19 @@ using namespace std;
 #include <iostream>
 
 
-Pokemon::Pokemon(string name, string description, int hp)
+Pokemon::Pokemon(string name, string description, Elements type, int hp)
 {
 	mName = name;
 	mDescriptionPokedex = description;
 	mLifePoint = hp;
+	mType = type;
 }
 Pokemon::~Pokemon(){}
 
-void Pokemon::GoAttack(Pokemon& target, int ability)
+void Pokemon::GoAttack(Pokemon& target, int choice)
 {
-	if(!IsAttackValid(ability))
+	int ability = choice - 1;
+	if(!IsAttackValid(choice))
 	{
 		return;
 	}
@@ -22,10 +24,12 @@ void Pokemon::GoAttack(Pokemon& target, int ability)
 
 	cout << mName << " attaque " << target.mName << " avec " << mAbilities[ability].GetName() << " et lui inflige " << damages << "." << endl;
 	target.TakeDamage(damages);
+	mAbilities[ability].Use();
 }
 
-bool Pokemon::IsAttackValid(int ability)
+bool Pokemon::IsAttackValid(int choice)
 {
+	int ability = choice - 1;
 	if (ability < 0 || ability > 3 || mAbilities[ability].GetName() == "Default" || mAbilities[ability].GetPP() <= 0)
 	{
 		cerr << mName << " n'a pas pu attaquer avec l'attaque #" << ability<< endl;
@@ -57,7 +61,7 @@ void Pokemon::PassOut()
 
 void Pokemon::Display()
 {
-	cout << mName << " est un pokemon qui est "<< mDescriptionPokedex <<" et a "<< mLifePoint << " hp." << endl;
+	cout << mName << " est un pokemon qui est "<< mDescriptionPokedex <<", qui est type " << ElementToString(mType) <<" et a "<< mLifePoint << " hp." << endl;
 }
 
 void Pokemon::Learn(Abilities ability, int place)
@@ -90,12 +94,17 @@ void Pokemon::ShowAbilities()
 	for(Abilities ability : mAbilities)//tant qu'il y a une abilité dans la case, continue)
 	{
 		if (ability.GetName() == "Default") {
-			cout << index<<" - Non assigné\n";
+			cout << (index + 1) << " | Non assigné\n";
 			index++;
 			continue;
 		}
-		cout << index << " - ";
+		cout << (index + 1) << " | ";
 		ability.ShortDisplay();
 		index++;
 	}
+}
+
+Elements Pokemon::GetPkmnType()
+{
+	return mType;
 }

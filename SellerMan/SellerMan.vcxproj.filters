@@ -32,5 +32,8 @@
     <ClInclude Include="Abilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Elements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,14 +14,14 @@ int main()
     cout << "Let's play Pokemon !" << endl;
 
     //Pokemon
-    Pokemon pikachu = Pokemon("Pikachu", "Petit, jaune et electrique.", 15);
-    Pokemon bulbizarre("Bulbizarre", "Gros, vert et feuillut.", 25); //Better version parce que evite de creer un double
+    Pokemon pikachu = Pokemon("Pikachu", "Petit, jaune et electrique.", Elements::Electric, 25);
+    Pokemon bulbizarre("Bulbizarre", "Gros, vert et feuillut.", Elements::Grass, 25); //Better version parce que evite de creer un double
 
     //Capacite
-    Abilities Eclair("Eclair", "Lance un eclair sur l'ennemi.", 10, 10);
-    Abilities QueueDeFer("Queue de Fer", "Attaque violement l'ennemi avec sa queue.", 7, 15);
-    Abilities LanceFeuille("LanceFeuille", "Lance des feuilles tranchantes.", 12, 10);
-    Abilities CanonGrain("Canon Graine", "Mitraille son adversaire avec des graines.", 5, 15);
+    Abilities Eclair("Attaque Eclair", "Lance un eclair sur l'ennemi.", Elements::Electric, 10, 2);
+    Abilities QueueDeFer("Queue de Fer", "Attaque violement l'ennemi avec sa queue.", Elements::Steel, 7, 15);
+    Abilities LanceFeuille("LanceFeuille", "Lance des feuilles tranchantes.", Elements::Grass, 12, 10);
+    Abilities CanonGrain("Canon Graine", "Mitraille son adversaire avec des graines.", Elements::Grass, 5, 15);
 
     cout << "Salut jeune aventurier, voici ton pokemon, " << endl;
     pikachu.Display();
@@ -41,7 +41,7 @@ int main()
         int attack;
         //Boucle pour savoir si la réponse est bonne, en l'occurence si l'attaque choisi est valide
         do {
-            cout << "Choisi ton attaque (0, 1, 2, 3) : " << endl;
+            cout << "Choisi ton attaque : " << endl;
             /*Eclair.ShortDisplay();
             QueueDeFer.ShortDisplay();*/
             pikachu.ShowAbilities();
@@ -54,7 +54,7 @@ int main()
 
         if(bulbizarre.IsAlive())
         {
-            int x = rand() % 2;
+            int x = rand() % 2 + 1;
             bulbizarre.GoAttack(pikachu, x);
         }
     }

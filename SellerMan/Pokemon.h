@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Abilities.h"
+#include "Elements.h"
 #include <random>
 #include <string>
 
@@ -14,9 +15,10 @@ private:
 	int mDamage;
 	void PassOut();
 	Abilities mAbilities[4];
+	Elements mType;
 
 public:
-	Pokemon(std::string name, std::string descriptiond, int hp);
+	Pokemon(string name, string description, Elements type, int hp);
 	~Pokemon();
 
 	void GoAttack(Pokemon& target, int ability); //Je pointe un pokémon précis avec & 
@@ -28,5 +30,6 @@ public:
 	void Learn(Abilities ability, int place);
 	bool IsAlive();
 	void ShowAbilities();
+	Elements GetPkmnType();
 };
 
