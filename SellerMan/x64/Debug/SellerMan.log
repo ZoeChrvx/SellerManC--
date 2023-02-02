@@ -3,10 +3,5 @@
   Pokemon.cpp
 C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Pokemon.cpp(22,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\Pokemon.cpp(23,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  MainGame.cpp
-C:\Users\zoe.chervaux\source\repos\SellerMan\SellerMan\MainGame.cpp(12,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
-  LINK : C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\MainGame.exe not found or not built by the last incremental link; performing full link
-Pokemon.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ElementToString(enum Elements)" (?ElementToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Elements@@@Z) already defined in Abilities.obj
-MainGame.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ElementToString(enum Elements)" (?ElementToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Elements@@@Z) already defined in Abilities.obj
-C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\MainGame.exe : fatal error LNK1169: one or more multiply defined symbols found
+  SellerMan.vcxproj -> C:\Users\zoe.chervaux\source\repos\SellerMan\x64\Debug\MainGame.exe

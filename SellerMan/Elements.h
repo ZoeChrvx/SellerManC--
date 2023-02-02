@@ -10,7 +10,7 @@ enum class Elements
 	Steel
 };
 
-string ElementToString(Elements element)
+static std::string ElementToString(Elements element)
 {
 	switch(element)
 	{

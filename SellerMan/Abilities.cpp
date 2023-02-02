@@ -51,7 +51,7 @@ void Abilities::Display()
 
 void Abilities::ShortDisplay()
 {
-	cout << mName <<" \t| " << mDamages << " dmg \t| " << ElementToString(mType) << mPP << "/" << mPPMax<<endl;
+	cout << mName << " \t| " << mDamages << " dmg \t| " << ElementToString(mType) << mPP << "/" << mPPMax << endl;
 }
 
 string Abilities::GetName()

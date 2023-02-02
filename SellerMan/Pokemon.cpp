@@ -19,6 +19,7 @@ void Pokemon::GoAttack(Pokemon& target, int choice)
 	{
 		return;
 	}
+	if (target.mType = Elem)
 	float coefficient = 1+ ((rand() % 4) - 2) / 10.0;
 	int damages = mAbilities[ability].GetDamages() * coefficient;
 
@@ -61,7 +62,7 @@ void Pokemon::PassOut()
 
 void Pokemon::Display()
 {
-	cout << mName << " est un pokemon qui est "<< mDescriptionPokedex <<", qui est type " << ElementToString(mType) <<" et a "<< mLifePoint << " hp." << endl;
+	cout << mName << " est un pokemon qui est " << mDescriptionPokedex << ", qui est de type " << ElementToString(mType) << " et a " << mLifePoint << " hp." << endl;
 }
 
 void Pokemon::Learn(Abilities ability, int place)
