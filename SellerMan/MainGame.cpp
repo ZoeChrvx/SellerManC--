@@ -12,27 +12,35 @@ int main()
     srand(time(NULL));
 
     cout << "Let's play Pokemon !" << endl;
+    cout << "====================================" << endl;
 
     //Pokemon
-    Pokemon pikachu = Pokemon("Pikachu", "Petit, jaune et electrique.", Elements::Electric, 25);
-    Pokemon bulbizarre("Bulbizarre", "Gros, vert et feuillut.", Elements::Grass, 25); //Better version parce que evite de creer un double
+    Pokemon pikachu = Pokemon("Pikachu", "Petit, jaune vivifiant, ", Elements::Electric, 25);
+    Pokemon bulbizarre("Bulbizarre", "Gros, vert et feuillut, ", Elements::Grass, 25); //Better version parce que evite de creer un double
 
     //Capacite
-    Abilities Eclair("Attaque Eclair", "Lance un eclair sur l'ennemi.", Elements::Electric, 10, 2);
-    Abilities QueueDeFer("Queue de Fer", "Attaque violement l'ennemi avec sa queue.", Elements::Steel, 7, 15);
-    Abilities LanceFeuille("LanceFeuille", "Lance des feuilles tranchantes.", Elements::Grass, 12, 10);
-    Abilities CanonGrain("Canon Graine", "Mitraille son adversaire avec des graines.", Elements::Grass, 5, 15);
+    Abilities Eclair("Attaque Eclair", "Lance un eclair sur l'ennemi, de type ", Elements::Electric, 10, 10);
+    Abilities QueueDeFer("Queue de Fer", "Attaque violement l'ennemi avec sa queue, de type ", Elements::Steel, 7, 15);
+    Abilities LanceFeuille("LanceFeuille", "Lance des feuilles tranchantes, de type ", Elements::Grass, 12, 10);
+    Abilities CanonGrain("Canon Graine", "Mitraille son adversaire avec des graines, de type ", Elements::Grass, 5, 15);
 
-    cout << "Salut jeune aventurier, voici ton pokemon, " << endl;
+    cout << "Salut jeune aventurier, voici ton pokemon " << endl;
+    cout << "-- " ;
     pikachu.Display();
-    cout << "Et voici ton adversaire, " << endl;
+    cout << "Et voici ton adversaire " << endl;
+    cout << "-- ";
     bulbizarre.Display();
 
+    cout << endl;
+    cout << "Voici les attaques que votre pokémon a appris :" << endl;
     pikachu.Learn(Eclair, 0);
     pikachu.Learn(QueueDeFer, 1);
+    cout << endl;
+    cout << "Et voici celle que votre adversaire a appris:" << endl;
     bulbizarre.Learn(LanceFeuille, 0);
     bulbizarre.Learn(CanonGrain, 1);
 
+    cout << endl;
     cout << "-----------------------------" << endl;
     cout << "-----!!!START BATTLE!!!------" << endl;
 

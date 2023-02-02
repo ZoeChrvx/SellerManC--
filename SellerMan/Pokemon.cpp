@@ -19,13 +19,28 @@ void Pokemon::GoAttack(Pokemon& target, int choice)
 	{
 		return;
 	}
-	if (target.mType = Elem)
 	float coefficient = 1+ ((rand() % 4) - 2) / 10.0;
-	int damages = mAbilities[ability].GetDamages() * coefficient;
-
-	cout << mName << " attaque " << target.mName << " avec " << mAbilities[ability].GetName() << " et lui inflige " << damages << "." << endl;
-	target.TakeDamage(damages);
-	mAbilities[ability].Use();
+	int damages = mAbilities[ability].GetDamages() * coefficient * ResistanceTabl[(int)mAbilities[ability].GetAbilityType()][(int)target.mType];
+	if (ResistanceTabl[(int)mAbilities[ability].GetAbilityType()][(int)target.mType] == 1)
+	{
+		cout << mName << " attaque " << target.mName << " avec " << mAbilities[ability].GetName() << " et lui inflige " << damages << "." << endl;
+		target.TakeDamage(damages);
+		mAbilities[ability].Use();
+	}
+	else if (ResistanceTabl[(int)mAbilities[ability].GetAbilityType()][(int)target.mType] == 0.5) 
+	{
+		cout << mName << " attaque " << target.mName << " avec " << mAbilities[ability].GetName() << " et lui inflige " << damages << "." << endl;
+		cout << "Ce n'est pas très efficace..." << endl;
+		target.TakeDamage(damages);
+		mAbilities[ability].Use();
+	}
+	else if (ResistanceTabl[(int)mAbilities[ability].GetAbilityType()][(int)target.mType] == 2)
+	{
+		cout << mName << " attaque " << target.mName << " avec " << mAbilities[ability].GetName() << " et lui inflige " << damages << "." << endl;
+		cout << "C'est super efficace !!!" << endl;
+		target.TakeDamage(damages);
+		mAbilities[ability].Use();
+	}
 }
 
 bool Pokemon::IsAttackValid(int choice)
